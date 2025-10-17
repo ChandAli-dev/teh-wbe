@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elegance Wear - High-End Clothing & Shoes</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container nav-container">67uxgh cx
+            <a href="#" class="brand-logo">Elegance Wear</a>
+
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#clothing">Shop (Clothing)</a></li>
+                    <li><a href="#shoes">Shop (Shoes)</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div>
+                <input type="text" placeholder="search for some thing "
+                    style="border: 1px solid black; border-radius: 20px; height: 30px; width: 200px;padding-left: 20px;">
+            </div>
+
+            <div class="nav-icons">
+                <button class="cart-btn" aria-label="Shopping Cart">🛒 (<span id="cart-count">0</span>)</button>
+                <button class="menu-toggle" aria-label="Toggle Mobile Menu">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero-section"
+            style="background-image: url('https://images.unsplash.com/photo-1542060703-a265691456d9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1ODc0ODJ8MHwxfHNlYXJjaHw3MHx8aGlnaCUyMGZhc2hpb24lMjBtb2RlbCUyMHdlYXJpbmclMjBjbG90aGVzfGVufDB8MHx8fDE3MDk4NTI2NzZ8MA&ixlib=rb-4.0.3&q=80&w=1080');">
+            <div class="hero-content container">
+                <h1>Timeless Style. Uncompromising Quality.</h1>
+                <p>Discover our new collection of meticulously crafted clothing and luxurious footwear.</p>
+                <a href="#featured" class="cta-button">Shop Now</a>
+            </div>
+        </section>
+
+        <section id="featured" class="featured-products container">
+            <h2 class="section-title">Featured New Arrivals</h2>
+            <div class="product-grid">
+
+                <div class="product-card" data-product-id="C101" data-product-name="Luxe Cashmere Coat"
+                    data-product-price="399.99">
+                    <img src="/cloth.webp"
+                        alt="Luxe Cashmere Coat" class="product-image">
+                    <h3 class="product-name">Luxe Cashmere Coat</h3>
+                    <p class="product-category">Clothing</p>
+                    <p class="product-price">$399.99</p>
+                    <button class="add-to-cart-btn" data-product-id="C101">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-product-id="S202" data-product-name="Italian Leather Heel"
+                    data-product-price="249.00">
+                    <img src="/img.gpg.webp"
+                        alt="Italian Leather Heel" class="product-image">
+                    <h3 class="product-name">Italian Leather Heel</h3>
+                    <p class="product-category">Shoes</p>
+                    <p class="product-price">$249.00</p>
+                    <button class="add-to-cart-btn" data-product-id="S202">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-product-id="C103" data-product-name="Silk Evening Gown"
+                    data-product-price="499.50">
+                    <img src="/coloth . png.webp"
+                        alt="Silk Evening Gown" class="product-image">
+                    <h3 class="product-name">Silk Evening Gown</h3>
+                    <p class="product-category">Clothing</p>
+                    <p class="product-price">$499.50</p>
+                    <button class="add-to-cart-btn" data-product-id="C103">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-product-id="S204" data-product-name="Classic Suede Loafer"
+                    data-product-price="189.99">
+                    <img src="/img.png"
+                        alt="Classic Suede Loafer" class="product-image">
+                    <h3 class="product-name">Classic Suede Loafer</h3>
+                    <p class="product-category">Shoes</p>
+                    <p class="product-price">$189.99</p>
+                    <button class="add-to-cart-btn" data-product-id="S204">Add to Cart</button>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="clothing" class="container section-placeholder">
+            <h2 class="section-title">Shop Clothing</h2>
+            <p>Explore our full range of tailored shirts, elegant trousers, and seasonal outerwear.</p>
+        </section>
+
+        <section id="shoes" class="container section-placeholder">
+            <h2 class="section-title">Shop Shoes</h2>
+            <p>Handcrafted leather boots, classic sneakers, and sophisticated dress shoes for every occasion.</p>
+        </section>
+
+        <section id="about" class="container section-placeholder">
+            <h2 class="section-title">About Us</h2>
+            <p>Elegance Wear is committed to sustainable luxury and timeless design.</p>
+        </section>
+
+        <section id="contact" class="container section-placeholder">
+            <h2 class="section-title">Contact</h2>
+            <p>For inquiries, please email support@elegancewear.com</p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <span id="current-year"></span> Elegance Wear. All Rights Reserved. Luxury | Quality | Style.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

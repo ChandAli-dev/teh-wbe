@@ -1,0 +1,422 @@
+/* ------------------------------------- */
+/* 1. Global & Base Styles               */
+/* ------------------------------------- */
+
+:root {
+    --color-white: #ffffff;
+    --color-dark: #1a1a1a;
+    --color-text: #333333;
+    --color-accent: #b8860b; /* Gold/Bronze subtle tone */
+    --font-serif: 'Playfair Display', serif;
+    --font-sans: 'Montserrat', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-white);
+    min-height: 100vh;
+}
+
+/* Container for Centering Content */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Typography */
+h1, h2, h3 {
+    font-family: var(--font-serif);
+    color: var(--color-dark);
+    line-height: 1.2;
+}
+
+h1 { font-size: 3rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.2rem; }
+
+a {
+    text-decoration: none;
+    color: var(--color-dark);
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--color-accent);
+}
+
+/* Global Call-to-Action Button Style */
+.cta-button {
+    display: inline-block;
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.cta-button:hover {
+    background-color: #a07a0a; /* Slightly darker gold on hover */
+    transform: translateY(-2px);
+}
+
+/* ------------------------------------- */
+/* 2. Header & Navigation Styles         */
+/* ------------------------------------- */
+
+.header {
+    background-color: var(--color-white);
+    border-bottom: 1px solid #eeeeee;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.brand-logo {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-list a {
+    font-weight: 500;
+    padding: 10px 0;
+    display: block;
+    position: relative;
+}
+
+.nav-list a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-accent);
+    transition: width 0.3s ease-out;
+}
+
+.nav-list a:hover::after {
+    width: 100%;
+}
+
+.nav-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.cart-btn {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: var(--color-dark);
+    transition: color 0.3s;
+}
+
+.cart-btn:hover {
+    color: var(--color-accent);
+}
+
+.menu-toggle {
+    display: none; /* Hidden on desktop */
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--color-dark);
+}
+
+/* Mobile Menu State */
+.nav-menu.active {
+    display: flex;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-dark);
+    flex-direction: column;
+    padding: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-menu.active .nav-list {
+    flex-direction: column;
+    text-align: center;
+    gap: 0;
+}
+
+.nav-menu.active .nav-list li {
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-menu.active .nav-list a {
+    color: var(--color-white);
+    padding: 15px 0;
+}
+
+.nav-menu.active .nav-list a::after {
+    background-color: var(--color-accent);
+}
+
+/* ------------------------------------- */
+/* 3. Hero Section Styles                */
+/* ------------------------------------- */
+
+.hero-section {
+    height: 70vh; /* Prominent height */
+    background-size: cover;
+    background-position: center 25%;
+    background-color: var(--color-dark);
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: var(--color-white);
+}
+
+/* Dark Overlay for text readability */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+    position: relative; /* Over the overlay */
+    z-index: 2;
+    max-width: 600px;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.05); /* Very subtle background for content box */
+    border-left: 3px solid var(--color-accent);
+}
+
+.hero-content h1 {
+    color: var(--color-white);
+    margin-bottom: 15px;
+    font-size: 3.5rem;
+}
+
+.hero-content p {
+    color: #e0e0e0;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+/* ------------------------------------- */
+/* 4. Featured Products Styles           */
+/* ------------------------------------- */
+
+.featured-products {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.section-title {
+    margin-bottom: 60px;
+    font-weight: 400;
+    font-size: 2.5rem;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns for desktop */
+    gap: 30px;
+}
+
+.product-card {
+    text-align: left;
+    overflow: hidden;
+    padding-bottom: 20px;
+    transition: box-shadow 0.3s;
+}
+
+.product-card:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.product-image {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 15px;
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.03);
+}
+
+.product-name {
+    margin-bottom: 5px;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.product-category {
+    color: #999;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.product-price {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-dark);
+    margin-bottom: 15px;
+}
+
+.add-to-cart-btn {
+    width: 100%;
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    border: 1px solid var(--color-dark);
+    padding: 10px 0;
+    cursor: pointer;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s;
+}
+
+.add-to-cart-btn:hover {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+/* Placeholder Sections */
+.section-placeholder {
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 1px solid #f0f0f0;
+}
+
+/* ------------------------------------- */
+/* 5. Footer Styles                      */
+/* ------------------------------------- */
+
+.footer {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    padding: 30px 0;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.footer p {
+    font-size: 0.85rem;
+    color: #cccccc;
+}
+
+/* ------------------------------------- */
+/* 6. Mobile Responsiveness (Media Queries) */
+/* ------------------------------------- */
+
+/* Tablet Layout (up to 1024px) */
+@media (max-width: 1024px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+}
+
+/* Mobile Layout (up to 768px) */
+@media (max-width: 768px) {
+    /* Header/Navigation */
+    .nav-menu {
+        display: none; /* Hide navigation links by default on mobile */
+    }
+
+    .menu-toggle {
+        display: block; /* Show the menu toggle button */
+    }
+
+    .nav-container {
+        height: 60px; /* Smaller header on mobile */
+    }
+
+    .brand-logo {
+        font-size: 1.3rem;
+    }
+
+    .cart-btn {
+        margin-right: 10px;
+    }
+
+    /* Hero Section */
+    .hero-section {
+        height: 60vh;
+    }
+
+    .hero-content {
+        padding: 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .cta-button {
+        padding: 10px 20px;
+    }
+
+    /* Products */
+    .featured-products {
+        padding: 50px 20px;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr; /* Single column on phones */
+    }
+
+    .product-image {
+        height: 400px;
+    }
+}
